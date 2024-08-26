@@ -14,7 +14,7 @@ async function fetchNews() {
       params: {
         q: "sports",
         pageSize: 25,
-        apiKey: '644b47ad580e41d38073cb521e256928', 
+        apiKey: import.meta.env.VITE_NEWS_API_KEY, 
       },
     });
     news.value = response.data.articles;

@@ -19,7 +19,7 @@ async function searchNews() {
     const response = await axios.get('https://newsapi.org/v2/everything', {
       params: {
         q: query.value,
-        apiKey: '644b47ad580e41d38073cb521e256928', 
+        apiKey: import.meta.env.VITE_NEWS_API_KEY, 
       },
     });
     

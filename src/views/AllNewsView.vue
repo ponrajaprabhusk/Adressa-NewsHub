@@ -10,11 +10,18 @@ const error = ref(null);
 
 async function fetchNews() {
   try {
-    const response = await axios.get('https://newsapi.org/v2/everything?q=world&pageSize=35&apiKey=644b47ad580e41d38073cb521e256928');
+    const response = await axios.get('https://newsapi.org/v2/everything', {
+      params: {
+        q: 'world',
+        pageSize: 35,
+        apiKey: import.meta.env.VITE_NEWS_API_KEY, 
+        
+      },
+    });
     news.value = response.data.articles;
   } catch (err) {
     error.value = 'An error occurred while fetching news';
-    console.log('An error occurred while fetching news');
+    console.log('An error occurred while fetching news ', err);
   } finally {
     loading.value = false;
   }
