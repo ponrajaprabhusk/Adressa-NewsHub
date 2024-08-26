@@ -33,7 +33,7 @@ onMounted(() => {
 
 <template>
   <div class="">
-    <h1 class="text-center text-3xl text-blue-950 font-semibold m-3">Latest News in Norge !!</h1>
+    <h1 class="text-center text-3xl text-blue-950 font-semibold m-3">Latest News !!</h1>
 
     <div v-if="error" >{{ error }}</div>
     <div v-if="loading" class="text-center text-blue-900 my-15 py-8">

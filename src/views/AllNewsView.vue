@@ -10,12 +10,11 @@ const error = ref(null);
 
 async function fetchNews() {
   try {
-    const response = await axios.get('https://newsapi.org/v2/everything', {
+    const response = await axios.get('http://newsapi.org/v2/everything', {
       params: {
         q: 'world',
         pageSize: 35,
         apiKey: import.meta.env.VITE_NEWS_API_KEY, 
-        
       },
     });
     news.value = response.data.articles;
